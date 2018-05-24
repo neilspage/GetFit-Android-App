@@ -26,14 +26,10 @@ public class AddtoDatabase extends AppCompatActivity {
     private EditText nWeight;
     private EditText nHeight;
     private EditText nGoal;
-
-    //add Firebase
     private FirebaseDatabase mFirebaseDatabase;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private DatabaseReference myRef;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +41,6 @@ public class AddtoDatabase extends AppCompatActivity {
         nWeight = (EditText) findViewById(R.id.add_weight);
         nHeight = (EditText) findViewById(R.id.add_height);
         nGoal = (EditText) findViewById(R.id.add_goal);
-
-        //declare the database reference object. This is what we use to access the database.
-        //NOTE: Unless you are signed in, this will not be useable.
         mAuth = FirebaseAuth.getInstance();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         myRef = mFirebaseDatabase.getReference();
@@ -57,31 +50,24 @@ public class AddtoDatabase extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
-                    // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                     toastMessage("Successfully signed in with: " + user.getEmail());
                 } else {
-                    // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
                     toastMessage("Successfully signed out.");
                 }
-                // ...
             }
         };
 
-        // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
                 Object value = dataSnapshot.getValue();
                 Log.d(TAG, "Value is: " + value);
             }
 
             @Override
             public void onCancelled(DatabaseError error) {
-                // Failed to read value
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
@@ -95,51 +81,50 @@ public class AddtoDatabase extends AppCompatActivity {
                 String newWeight = nWeight.getText().toString();
                 String newHeight = nHeight.getText().toString();
                 String newGoal = nGoal.getText().toString();
+
                 if(!newName.equals("")){
                     FirebaseUser user = mAuth.getCurrentUser();
                     String userID = user.getUid();
                     myRef.child("User").child(userID).child("Name").setValue(newName);
                     toastMessage("Adding " + newName + " to database...");
-                    //reset the text
                     nNewName.setText("");
                 }
+
                 if(!newPhone.equals("")){
                     FirebaseUser user = mAuth.getCurrentUser();
                     String userID = user.getUid();
                     myRef.child("User").child(userID).child("Phone").setValue(newPhone);
                     toastMessage("Adding " + newPhone + " to database...");
-                    //reset the text
                     nPhone.setText("");
                 }
+
                 if(!newWeight.equals("")){
                     FirebaseUser user = mAuth.getCurrentUser();
                     String userID = user.getUid();
                     myRef.child("User").child(userID).child("Weight").setValue(newWeight);
                     toastMessage("Adding " + newWeight + " to database...");
-                    //reset the text
                     nWeight.setText("");
                 }
+
                 if(!newHeight.equals("")){
                     FirebaseUser user = mAuth.getCurrentUser();
                     String userID = user.getUid();
                     myRef.child("User").child(userID).child("Height").setValue(newHeight);
                     toastMessage("Adding " + newHeight + " to database...");
-                    //reset the text
                     nHeight.setText("");
                 }
+
                 if(!newGoal.equals("")){
                     FirebaseUser user = mAuth.getCurrentUser();
                     String userID = user.getUid();
                     myRef.child("User").child(userID).child("Goal").setValue(newGoal);
                     toastMessage("Adding " + newGoal + " to database...");
-                    //reset the text
                     nGoal.setText("");
                 }
             }
         });
-
-
     }
+
     @Override
     public void onStart() {
         super.onStart();
@@ -153,7 +138,7 @@ public class AddtoDatabase extends AppCompatActivity {
             mAuth.removeAuthStateListener(mAuthListener);
         }
     }
-    //add a toast to show when successfully signed in
+
     /**
      * customizable toast
      * @param message
@@ -161,5 +146,4 @@ public class AddtoDatabase extends AppCompatActivity {
     private void toastMessage(String message){
         Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
     }
-
 }

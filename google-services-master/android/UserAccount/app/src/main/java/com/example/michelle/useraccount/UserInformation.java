@@ -1,13 +1,14 @@
 package com.example.michelle.useraccount;
 
 public class UserInformation {
+
     private String Name;
     private String Phone;
     private String Weight;
     private String Height;
     private String Goal;
 
-    public UserInformation(){
+    public UserInformation() {
 
     }
 

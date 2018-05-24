@@ -26,9 +26,8 @@ public class ForgetAndChangePasswordActivity extends AppCompatActivity {
     private ProgressDialog PD;
     private TextInputLayout labelMode;
 
-
-
-    @Override    protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget_and_change_password);
 
@@ -45,6 +44,7 @@ public class ForgetAndChangePasswordActivity extends AppCompatActivity {
         labelMode = (TextInputLayout) findViewById(R.id.label);
 
         final int mode = getIntent().getIntExtra("Mode", 0);
+
         if (mode == 0) {
             txtMode.setText("Forget Password");
             edtMode.setHint("Enter Registered Email");
@@ -67,13 +67,12 @@ public class ForgetAndChangePasswordActivity extends AppCompatActivity {
                 callFunction(mode);
             }
         });
-
     }
 
     private void callFunction(int mode) {
-
         FirebaseUser user = auth.getCurrentUser();
         final String modeStr = edtMode.getText().toString();
+
         if (mode == 0) {
             if (TextUtils.isEmpty(modeStr)) {
                 edtMode.setError("Value Required");
@@ -87,7 +86,6 @@ public class ForgetAndChangePasswordActivity extends AppCompatActivity {
                             Toast.makeText(ForgetAndChangePasswordActivity.this, "Failed to send reset email!", Toast.LENGTH_SHORT).show();
                         }
                         PD.dismiss();
-
                     }
                 });
             }
@@ -133,7 +131,7 @@ public class ForgetAndChangePasswordActivity extends AppCompatActivity {
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override                            public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(ForgetAndChangePasswordActivity.this, "Your profile is deleted:( Create a account now!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(ForgetAndChangePasswordActivity.this, "Your profile is deleted :( Create an account now!", Toast.LENGTH_SHORT).show();
                                 } else {
                                     Toast.makeText(ForgetAndChangePasswordActivity.this, "Failed to delete your account!", Toast.LENGTH_SHORT).show();
                                 }
