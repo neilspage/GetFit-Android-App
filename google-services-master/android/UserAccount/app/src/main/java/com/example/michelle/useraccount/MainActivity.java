@@ -54,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /*findViewById(R.id.buttonLogin).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userLogin();
+            }
+        });*/
+
         mAuth = FirebaseAuth.getInstance();
 
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
@@ -131,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (password.length() < 6) {
-            editTextPassword.setError("Minimum lenght of password should be 6");
+            editTextPassword.setError("Minimum length of password should be 6");
             editTextPassword.requestFocus();
             return;
         }
@@ -152,6 +159,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        /*Intent intent = new Intent(MainActivity.this, HomepageActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);*/
     }
 
 
@@ -177,6 +187,8 @@ public class MainActivity extends AppCompatActivity {
 //        };
 
     private void googleLogin() {
+        startActivity(new Intent(MainActivity.this, MainActivity.class));
+        finish();
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }

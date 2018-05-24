@@ -1,15 +1,78 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HomepageActivity">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Welcome to getFit!"
+        android:textAllCaps="true"
+        android:textSize="16sp" />
+
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/change_password_button"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:background="@color/colorPrimary"
+        android:text="Change Password"
+        android:textColor="@color/white" />
+
+
+    <Button
+        android:id="@+id/change_email_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:background="@color/colorPrimary"
+        android:text="Change Email"
+        android:textColor="@color/white" />
+
+
+    <Button
+        android:id="@+id/delete_user_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:background="@color/colorPrimary"
+        android:text="Delete User"
+        android:textColor="@color/white" />
+
+
+    <Button
+        android:id="@+id/sign_out_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:background="@color/colorPrimary"
         android:text="Sign Out"
-        android:id="@+id/signOutBtn"/>
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/add_personal_details"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:background="@color/colorPrimary"
+        android:text="Add Personal Information"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/view_personal_details"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:background="@color/colorPrimary"
+        android:text="View User Details"
+        android:textColor="@color/white" />
+
 
 </LinearLayout>
