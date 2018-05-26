@@ -35,6 +35,14 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
+        buttonPedometer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainMenu.this, StepCounter.class);
+                startActivity(intent);
+            }
+        });
+
         buttonWorkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
