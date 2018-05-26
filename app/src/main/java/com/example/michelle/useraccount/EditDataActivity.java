@@ -79,12 +79,6 @@ public class EditDataActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mDatabaseHelper.deleteFoodActivity(selectedID, selectedFoodActivity);
-                editable_item.setText("");
-                editable_item2.setText("");
-                editable_item3.setText("");
-                editable_item4.setText("");
-                editable_item5.setText("");
-                editable_item6.setText("");
                 startActivity(new Intent(EditDataActivity.this, ListDataActivity.class));
                 finish();
                 toastMessage("Removed from database");
