@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class HomepageActivity extends AppCompatActivity {
 
-    Button btnAddtoDatabase,btnViewDatabase;
+    Button btnAddtoDatabase, btnViewDatabase;
     private FirebaseAuth mAuth;
 
     @Override
@@ -18,6 +18,8 @@ public class HomepageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
         mAuth = FirebaseAuth.getInstance();
+        btnAddtoDatabase = (Button) findViewById(R.id.add_personal_details);
+        btnViewDatabase = (Button) findViewById(R.id.view_personal_details);
 
         findViewById(R.id.sign_out_button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +51,7 @@ public class HomepageActivity extends AppCompatActivity {
             }
         });
 
-        /*btnAddtoDatabase.setOnClickListener(new View.OnClickListener() {
+        btnAddtoDatabase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomepageActivity.this, AddtoDatabase.class));
@@ -61,6 +63,6 @@ public class HomepageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(HomepageActivity.this, ViewDatabase.class));
             }
-        });*/
+        });
     }
 }
