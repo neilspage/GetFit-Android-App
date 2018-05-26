@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         if (mAuth.getCurrentUser() != null) {
             finish();
-            startActivity(new Intent(MainActivity.this, HomepageActivity.class));
+            startActivity(new Intent(MainActivity.this, MainMenu.class));
         }
     }
 
@@ -126,7 +126,8 @@ public class MainActivity extends AppCompatActivity {
                 /* progressBar.setVisibility(View.GONE); */
                 if (task.isSuccessful()) {
                     finish();
-                    Intent intent = new Intent(MainActivity.this, HomepageActivity.class);
+                    //Intent intent = new Intent(MainActivity.this, HomepageActivity.class);
+                    Intent intent = new Intent(MainActivity.this, MainMenu.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 } else {

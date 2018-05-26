@@ -24,7 +24,8 @@
         <activity android:name=".HomepageActivity" />
         <activity android:name=".ForgetAndChangePasswordActivity" />
         <activity android:name=".AddtoDatabase" />
-        <activity android:name=".ViewDatabase"></activity>
+        <activity android:name=".ViewDatabase" />
+        <activity android:name=".MainMenu" />
     </application>
 
 </manifest>
