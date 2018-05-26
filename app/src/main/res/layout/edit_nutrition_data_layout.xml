@@ -19,7 +19,8 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textAlignment="center" />
 
     <Button
         android:id="@+id/buttonSave"
@@ -64,7 +65,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editable_item" />
+        app:layout_constraintTop_toBottomOf="@+id/editable_item"
+        android:textAlignment="center" />
 
     <EditText
         android:id="@+id/editable_item3"
@@ -81,7 +83,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editable_item2" />
+        app:layout_constraintTop_toBottomOf="@+id/editable_item2"
+        android:textAlignment="center" />
 
     <EditText
         android:id="@+id/editable_item4"
@@ -98,7 +101,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editable_item3" />
+        app:layout_constraintTop_toBottomOf="@+id/editable_item3"
+        android:textAlignment="center" />
 
     <EditText
         android:id="@+id/editable_item5"
@@ -115,7 +119,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editable_item4" />
+        app:layout_constraintTop_toBottomOf="@+id/editable_item4"
+        android:textAlignment="center" />
 
     <EditText
         android:id="@+id/editable_item6"
@@ -132,6 +137,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editable_item5" />
+        app:layout_constraintTop_toBottomOf="@+id/editable_item5"
+        android:textAlignment="center" />
 
 </android.support.constraint.ConstraintLayout>
