@@ -102,26 +102,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(query6);
     }
 
-    public void deleteFoodActivity(int id, String foodActivity, int carbohydrates, int fat, int protein, int sugar, int energy) {
+    public void deleteFoodActivity(int id, String foodActivity) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "DELETE FROM " + TABLE_FOOD_ACTIVITY + " WHERE " + COL1 + " = '" + id + "'"
                 + " AND " + COL2 + " = '" + foodActivity + "'";
-        String query2 = "DELETE FROM " + TABLE_FOOD_ACTIVITY + " WHERE " + COL1 + " = '" + id + "'"
-                + " AND " + COL3 + " = '" + carbohydrates + "'";
-        String query3 = "DELETE FROM " + TABLE_FOOD_ACTIVITY + " WHERE " + COL1 + " = '" + id + "'"
-                + " AND " + COL4 + " = '" + fat + "'";
-        String query4 = "DELETE FROM " + TABLE_FOOD_ACTIVITY + " WHERE " + COL1 + " = '" + id + "'"
-                + " AND " + COL5 + " = '" + protein + "'";
-        String query5 = "DELETE FROM " + TABLE_FOOD_ACTIVITY + " WHERE " + COL1 + " = '" + id + "'"
-                + " AND " + COL6 + " = '" + sugar + "'";
-        String query6 = "DELETE FROM " + TABLE_FOOD_ACTIVITY + " WHERE " + COL1 + " = '" + id + "'"
-                + " AND " + COL7 + " = '" + energy + "'";
         db.execSQL(query);
-        db.execSQL(query2);
-        db.execSQL(query3);
-        db.execSQL(query4);
-        db.execSQL(query5);
-        db.execSQL(query6);
     }
 
     public void deleteAllFoodActivity() {

@@ -78,14 +78,7 @@ public class EditDataActivity extends AppCompatActivity {
         buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mDatabaseHelper.deleteFoodActivity(
-                        selectedID,
-                        selectedFoodActivity,
-                        selectedCarbohydrates,
-                        selectedFat,
-                        selectedProtein,
-                        selectedSugar,
-                        selectedEnergy);
+                mDatabaseHelper.deleteFoodActivity(selectedID, selectedFoodActivity);
                 editable_item.setText("");
                 editable_item2.setText("");
                 editable_item3.setText("");
