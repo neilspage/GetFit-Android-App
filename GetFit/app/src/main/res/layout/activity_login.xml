@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Login">
+
+    <ImageView
+        android:id="@+id/treadmillImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:drawable/screen_background_dark_transparent"
+        android:contentDescription="treadmillBackground"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_treadmill" tools:targetApi="eclair"/>
+
+    <ImageView
+        android:id="@+id/backgroundTransparency"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#92000000"
+        android:contentDescription="blackShade"
+        android:scaleType="center"
+        tools:targetApi="donut" />
+
+    <ImageView
+        android:id="@+id/getFitLogoWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:contentDescription="getFitLogoWhite"
+        android:scaleType="center"
+        app:srcCompat="@drawable/logo_getfit_white_x1_5" tools:targetApi="donut"/>
+
+    <EditText
+        android:id="@+id/inputEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="350dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#ffffff"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:id="@+id/inputPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColorHint="#ffffff"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="126dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/inputPassword"
+        android:text="Submit" />
+
+
+</RelativeLayout>
