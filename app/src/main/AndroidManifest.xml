@@ -26,6 +26,10 @@
         <activity android:name=".AddtoDatabase" />
         <activity android:name=".ViewDatabase" />
         <activity android:name=".MainMenu" />
+        <activity android:name=".NutritionTracker" />
+        <activity android:name=".DatabaseHelper" />
+        <activity android:name=".ListDataActivity" />
+        <activity android:name=".EditDataActivity" />
     </application>
 
 </manifest>

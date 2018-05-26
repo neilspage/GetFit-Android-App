@@ -25,5 +25,12 @@ public class MainMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        buttonNutritionTracker.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenu.this, NutritionTracker.class);
+                startActivity(intent);
+            }
+        });
     }
 }
