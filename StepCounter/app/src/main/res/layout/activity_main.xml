@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom = "16dp"
+    android:paddingLeft = "16dp"
+    android:paddingRight = "16dp"
+    android:gravity = "center"
+    android:paddingTop = "16dp"
+    tools:context="com.example.mathuchoco.stepcounter.MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Steps taken: "
+        android:textSize="45dp" />
+
+    <TextView
+        android:id="@+id/tv_steps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "10dp"
+        android:text="0"
+        android:textSize="40dp" />
+</LinearLayout>
