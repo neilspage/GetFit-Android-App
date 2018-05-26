@@ -117,12 +117,13 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        progressBar.setVisibility(View.VISIBLE);
+        /* progressBar crashes app */
+        /* progressBar.setVisibility(View.VISIBLE); */
 
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                progressBar.setVisibility(View.GONE);
+                /* progressBar.setVisibility(View.GONE); */
                 if (task.isSuccessful()) {
                     finish();
                     Intent intent = new Intent(MainActivity.this, HomepageActivity.class);
