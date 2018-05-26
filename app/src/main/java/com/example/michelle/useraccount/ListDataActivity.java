@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -18,12 +19,14 @@ public class ListDataActivity extends AppCompatActivity {
 
     DatabaseHelper mDatabaseHelper;
     private ListView mListView;
+    private TextView mTextView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nutrition_list_layout);
         mListView = (ListView) findViewById(R.id.listView);
+        mTextView = (TextView) findViewById(R.id.nutritionTotals);
         mDatabaseHelper = new DatabaseHelper(this);
 
         populateListView();
@@ -37,6 +40,11 @@ public class ListDataActivity extends AppCompatActivity {
         final ArrayList<Integer> listProtein = new ArrayList<>();
         final ArrayList<Integer> listSugar = new ArrayList<>();
         final ArrayList<Integer> listEnergy = new ArrayList<>();
+        int totalCarbohydrates = 0;
+        int totalFat = 0;
+        int totalProtein = 0;
+        int totalSugar = 0;
+        int totalEnergy = 0;
 
         while (data.moveToNext()) {
             listData.add(data.getString(1));
@@ -45,7 +53,21 @@ public class ListDataActivity extends AppCompatActivity {
             listProtein.add(data.getInt(4));
             listSugar.add(data.getInt(5));
             listEnergy.add(data.getInt(6));
+
+            totalCarbohydrates += data.getInt(2);
+            totalFat += data.getInt(3);
+            totalProtein += data.getInt(4);
+            totalSugar += data.getInt(5);
+            totalEnergy += data.getInt(6);
         }
+
+        mTextView.setText(
+                "Totals: " + totalCarbohydrates + "g, "
+                + totalFat + "g ,"
+                + totalProtein + "g ,"
+                + totalSugar + "g ,"
+                + totalEnergy + "kJ"
+        );
 
         final ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listData);
         mListView.setAdapter(adapter);
