@@ -20,15 +20,25 @@ public class MainMenu extends AppCompatActivity {
         buttonWorkout = (ImageButton) findViewById(R.id.buttonWorkout);
 
         buttonProfile.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+            @Override
+            public void onClick(View view) {
                 Intent intent = new Intent(MainMenu.this, HomepageActivity.class);
                 startActivity(intent);
             }
         });
 
         buttonNutritionTracker.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+            @Override
+            public void onClick(View view) {
                 Intent intent = new Intent(MainMenu.this, NutritionTracker.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonWorkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainMenu.this, WorkoutListActivity.class);
                 startActivity(intent);
             }
         });
