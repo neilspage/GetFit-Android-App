@@ -123,4 +123,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(query5);
         db.execSQL(query6);
     }
+
+    public void deleteAllFoodActivity() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_FOOD_ACTIVITY);
+    }
 }

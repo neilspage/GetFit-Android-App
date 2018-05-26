@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ public class ListDataActivity extends AppCompatActivity {
     DatabaseHelper mDatabaseHelper;
     private ListView mListView;
     private TextView mTextView;
+    private Button buttonDeleteAll;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,6 +30,16 @@ public class ListDataActivity extends AppCompatActivity {
         mListView = (ListView) findViewById(R.id.listView);
         mTextView = (TextView) findViewById(R.id.nutritionTotals);
         mDatabaseHelper = new DatabaseHelper(this);
+        buttonDeleteAll = (Button) findViewById(R.id.buttonDeleteAll);
+
+        buttonDeleteAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDatabaseHelper.deleteAllFoodActivity();
+                finish();
+                toastMessage("All food activities deleted");
+            }
+        });
 
         populateListView();
     }
@@ -63,9 +75,9 @@ public class ListDataActivity extends AppCompatActivity {
 
         mTextView.setText(
                 "Totals: " + totalCarbohydrates + "g, "
-                + totalFat + "g ,"
-                + totalProtein + "g ,"
-                + totalSugar + "g ,"
+                + totalFat + "g, "
+                + totalProtein + "g, "
+                + totalSugar + "g, "
                 + totalEnergy + "kJ"
         );
 
