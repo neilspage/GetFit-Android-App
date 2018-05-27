@@ -1,96 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".NewAccountActivity">
+    tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/treadmillImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:drawable/screen_background_dark_transparent"
+        android:contentDescription="treadmillBackground"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_treadmill" tools:targetApi="eclair"
+        android:layout_alignParentLeft="true" />
 
-    <RelativeLayout
+    <ImageView
+        android:id="@+id/backgroundTransparency"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#92000000"
+        android:contentDescription="blackShade"
+        android:scaleType="center"
+        tools:targetApi="donut"
+        android:layout_alignParentLeft="true" />
+
+    <ImageView
+        android:id="@+id/getFitLogoWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:contentDescription="getFitLogoWhite"
+        android:scaleType="center"
+        app:srcCompat="@drawable/logo_getfit_white_x1_5" tools:targetApi="donut"/>
+
+    <EditText
+        android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_above="@+id/editTextPassword"
+        android:layout_alignParentStart="true"
+        android:fontFamily="sans-serif"
+        android:hint="email"
+        android:inputType="textEmailAddress"
+        android:paddingBottom="15dp"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:layout_alignParentLeft="true" />
 
-        <ImageView
-            android:layout_width="85dp"
-            android:layout_height="100dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/getfit" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
+    <EditText
+        android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@color/colorPrimary">
+        android:layout_above="@+id/buttonSignUp"
+        android:layout_alignParentStart="true"
+        android:fontFamily="sans-serif"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:paddingBottom="15dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:layout_alignParentLeft="true" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:orientation="vertical"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp">
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewLogin"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:layout_alignParentLeft="true" />
 
-            <EditText
-                android:id="@+id/editTextEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
-                android:hint="email"
-                android:inputType="textEmailAddress"
-                android:paddingBottom="15dp"
-                android:textColorHint="@color/white" />
+    <TextView
+        android:id="@+id/textViewLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:padding="15dp"
+        android:text="Already have an account? Login"
+        android:textAlignment="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="@color/white"
+        android:layout_alignParentLeft="true" />
 
-            <EditText
-                android:id="@+id/editTextPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
-                android:hint="password"
-                android:inputType="textPassword"
-                android:paddingBottom="15dp"
-                android:textColorHint="@color/white" />
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
 
-            <Button
-                android:id="@+id/buttonSignUp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="7dp"
-                android:background="@android:color/transparent"
-                android:text="Sign Up"
-                android:textAllCaps="false"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/textViewLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:text="Already have an account? Login"
-                android:textAlignment="center"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:textColor="@color/white" />
-
-
-        </LinearLayout>
-
-        <ProgressBar
-            android:id="@+id/progressbar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:visibility="gone" />
-
-
-    </RelativeLayout>
-
-
-
-</LinearLayout>
+</RelativeLayout>
