@@ -1,2 +1,2 @@
-# Software-Engineering-Studio-1A-Autumn-2018-Wrk2-Group-2
-GetFit fitness app
+# Android App (GetFit) developed for a uni project.
+<img src="https://i.imgur.com/i3DpFJ3.png">
